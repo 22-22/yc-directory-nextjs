@@ -33,3 +33,5 @@ c. (FINAL VERSION)
 
 2. Components can be made `ASYNC` cause it's a server rendered component
    (I need to make it async to be able to wait for an authorisation `const session = await auth()`)
+
+3. It's preferrable to host fonts locally.
