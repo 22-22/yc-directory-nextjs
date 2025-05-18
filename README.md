@@ -35,3 +35,7 @@ c. (FINAL VERSION)
    (I need to make it async to be able to wait for an authorisation `const session = await auth()`)
 
 3. It's preferrable to host fonts locally.
+
+4. SUBMITTING A FORM WITH RSC
+   With RSC and NEXTJS, form submissions often happen through URL search params.
+   When pressing a submit button, I trigger a navigation with new URL search params, params go to server and RSC re-renders with new data.
