@@ -11,7 +11,7 @@ const StartupCard = ({ post }: any) => {
         author,
         title,
         category,
-        _id,
+        id,
         image,
         description,
     } = post;
@@ -29,14 +29,14 @@ const StartupCard = ({ post }: any) => {
 
             <div className="flex justify-between items-center mt-5 gap-5">
                 <div className="flex-1">
-                    <Link href={`/user/${author?._id}`}>
+                    <Link href={`/user/${author?.id}`}>
                         <p className="text-16-medium line-clamp-1">{author?.name}</p>
                     </Link>
-                    <Link href={`/startup/${_id}`}>
+                    <Link href={`/startup/${id}`}>
                         <h3 className="text-26-semibold line-clamp-1">{title}</h3>
                     </Link>
                 </div>
-                <Link href={`/user/${author?._id}`}>
+                <Link href={`/user/${author?.id}`}>
                     <Image
                         src={author?.image!}
                         alt={author?.name!}
@@ -47,7 +47,7 @@ const StartupCard = ({ post }: any) => {
                 </Link>
             </div>
 
-            <Link href={`/startup/${_id}`}>
+            <Link href={`/startup/${id}`}>
                 <p className="font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all">{description}</p>
 
                 <img src={image} alt="placeholder" className="w-full h-[164px] rounded-[10px] object-cover" />
@@ -58,7 +58,7 @@ const StartupCard = ({ post }: any) => {
                     <p className="text-16-medium">{category}</p>
                 </Link>
                 <Button className="rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3" asChild>
-                    <Link href={`/startup/${_id}`}>Details</Link>
+                    <Link href={`/startup/${id}`}>Details</Link>
                 </Button>
             </div>
         </li>

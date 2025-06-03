@@ -1,5 +1,8 @@
 import StartupCard from "@/components/StartupCard";
 import SearchForm from "../../components/SearchForm";
+import { PrismaClient } from "@/lib/generated/prisma";
+
+const prisma = new PrismaClient();
 
 export default async function Home({
   searchParams
@@ -8,16 +11,11 @@ export default async function Home({
 }) {
   const query = (await searchParams).query;
 
-  const posts = [{
-    _createdAt: "11.11.2022",
-    views: 55,
-    author: { _id: 1, name: "Jane Doe", image: "https://dummyjson.com/image/100" },
-    _id: 1,
-    description: "This is a description",
-    image: "https://dummyjson.com/image/150",
-    category: "Robots",
-    title: "We Robots",
-  }]
+  const posts = await prisma.startup.findMany({
+    include: {
+      author: true,
+    },
+  });
 
   return (
     <>
@@ -39,7 +37,7 @@ export default async function Home({
         <ul className="mt-7 grid md:grid-cols-3 sm:grid-cols-2 gap-5">
           {posts?.length > 0 ? (
             posts.map((post: any) => (
-              <StartupCard key={post?._id} post={post} />
+              <StartupCard key={post?.id} post={post} />
             ))
           ) : (
             <p className="no-results">No startups found</p>
