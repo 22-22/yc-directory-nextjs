@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { formatDate } from "@/lib/utils";
+import { StartupWithAuthor } from "@/types";
 
-const StartupCard = ({ post }: any) => {
+const StartupCard = ({ post }: { post: StartupWithAuthor }) => {
     const {
-        _createdAt,
+        createdAt,
         views,
         author,
         title,
@@ -20,7 +21,7 @@ const StartupCard = ({ post }: any) => {
     return (
         <li className="bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-md hover:border-primary transition-all duration-500 hover:shadow-lg hover:bg-primary-100 group">
             <div className="flex justify-between items-center">
-                <p className="font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full group-hover:bg-white-100">{formatDate(_createdAt)}</p>
+                <p className="font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full group-hover:bg-white-100">{formatDate(createdAt)}</p>
                 <div className="flex gap-1.5">
                     <EyeIcon className="size-6 text-primary" />
                     <span className="text-16-medium">{views}</span>
