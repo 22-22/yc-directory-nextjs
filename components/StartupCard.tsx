@@ -39,8 +39,8 @@ const StartupCard = ({ post }: { post: StartupWithAuthor }) => {
                 </div>
                 <Link href={`/user/${author?.id}`}>
                     <Image
-                        src={author?.image!}
-                        alt={author?.name!}
+                        src={author?.image}
+                        alt={author?.name}
                         width={48}
                         height={48}
                         className="rounded-full"
@@ -51,7 +51,7 @@ const StartupCard = ({ post }: { post: StartupWithAuthor }) => {
             <Link href={`/startup/${id}`}>
                 <p className="font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all">{description}</p>
 
-                <img src={image} alt="placeholder" className="w-full h-[164px] rounded-[10px] object-cover" />
+                <img src={image} alt="startup" className="w-full h-[164px] rounded-[10px] object-cover" />
             </Link>
 
             <div className="flex justify-between items-center gap-3 mt-5">
