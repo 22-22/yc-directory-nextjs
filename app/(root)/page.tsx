@@ -12,6 +12,12 @@ export default async function Home({
   const query = (await searchParams).query;
 
   const posts = await prisma.startup.findMany({
+    where: {
+      title: {
+        contains: query,
+        mode: 'insensitive',
+      },
+    },
     include: {
       author: true,
     },
