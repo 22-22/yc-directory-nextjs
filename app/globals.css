@@ -11,14 +11,14 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary-100: #FFE8F0;
-  --color-primary-default: #EE2B69;
+  --color-primary-DEFAULT: #EE2B69;
   --color-secondary: #FBE843;
   --color-black-100: #333333;
   --color-black-200: #141413;
   --color-black-300: #7D8087;
-  --color-black-default: #FFE8F0;
+  --color-black-DEFAULT: #FFE8F0;
   --color-white-100: #F7F7F7;
-  --color-white-default: #FFFFFF;
+  --color-white-DEFAULT: #FFFFFF;
   --screen-xs: 475px;
   --borderRadius-lg: var(--radius);
   --borderRadius-md: calc(var(--radius) - 2px);

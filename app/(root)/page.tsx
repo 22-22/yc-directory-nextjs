@@ -19,7 +19,7 @@ export default async function Home({
 
   return (
     <>
-      <section className="w-full bg-primary-default min-h-[530px] flex justify-center items-center flex-col py-10 px-6">
+      <section className="w-full bg-primary-DEFAULT min-h-[530px] flex justify-center items-center flex-col py-10 px-6">
         <h1 className="uppercase bg-black px-6 py-3 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5">
           Pitch Your Startup, <br />
           Connect With Entrepreneurs
@@ -40,7 +40,7 @@ export default async function Home({
               <StartupCard key={post?.id} post={post} />
             ))
           ) : (
-            <p className="no-results">No startups found</p>
+            <p className="text-black-100 text-sm font-normal">No startups found</p>
           )}
         </ul>
       </section>

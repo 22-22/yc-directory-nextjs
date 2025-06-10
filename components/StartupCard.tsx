@@ -19,22 +19,22 @@ const StartupCard = ({ post }: { post: StartupWithAuthor }) => {
 
 
     return (
-        <li className="bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-md hover:border-primary transition-all duration-500 hover:shadow-lg hover:bg-primary-100 group">
+        <li className="bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-md hover:border-primary-DEFAULT transition-all duration-500 hover:shadow-lg hover:bg-primary-100 group">
             <div className="flex justify-between items-center">
                 <p className="font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full group-hover:bg-white-100">{formatDate(createdAt)}</p>
                 <div className="flex gap-1.5">
-                    <EyeIcon className="size-6 text-primary" />
-                    <span className="text-16-medium">{views}</span>
+                    <EyeIcon className="size-6 text-primary-DEFAULT" />
+                    <span className="font-medium text-[16px] text-black">{views}</span>
                 </div>
             </div>
 
             <div className="flex justify-between items-center mt-5 gap-5">
                 <div className="flex-1">
                     <Link href={`/user/${author?.id}`}>
-                        <p className="text-16-medium line-clamp-1">{author?.name}</p>
+                        <p className="font-medium text-[16px] text-black line-clamp-1">{author?.name}</p>
                     </Link>
                     <Link href={`/startup/${id}`}>
-                        <h3 className="text-26-semibold line-clamp-1">{title}</h3>
+                        <h3 className="font-semibold text-[26px] text-black line-clamp-1">{title}</h3>
                     </Link>
                 </div>
                 <Link href={`/user/${author?.id}`}>
@@ -56,7 +56,7 @@ const StartupCard = ({ post }: { post: StartupWithAuthor }) => {
 
             <div className="flex justify-between items-center gap-3 mt-5">
                 <Link href={`/?query=${category?.toLowerCase()}`}>
-                    <p className="text-16-medium">{category}</p>
+                    <p className="font-medium text-[16px] text-black">{category}</p>
                 </Link>
                 <Button className="rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3" asChild>
                     <Link href={`/startup/${id}`}>Details</Link>
